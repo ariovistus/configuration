@@ -1,0 +1,39 @@
+set nocompatible 
+
+filetype off
+
+set rtp+=~/vimfiles/bundle/Vundle.vim
+
+call vundle#begin('~/vimfiles/bundle')
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'leafgarland/typescript-vim'
+
+call vundle#end()
+
+filetype plugin indent on
+
+syntax on
+set wrap
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+set ai
+set number
+set backspace=indent,eol,start
+"syntax on
+set viminfo='10,\"100,:20,%,n~\\_viminfo
+
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
+endfunction
+
+augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+augroup END
+
