@@ -21,7 +21,9 @@ set softtabstop=4
 set expandtab
 set ai
 set number
+set mouse-=a "right click to paste
 set backspace=indent,eol,start
+colorscheme zellner "white background color scheme
 "syntax on
 set viminfo='10,\"100,:20,%,n~\\_viminfo
 
